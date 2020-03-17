@@ -1,0 +1,12 @@
+1).healthcare management System?
+2)Online college Yearbook.
+3)online doctor appointment system.
+4)vehicle hiring system.
+5)Fab-feet design(slippers manufacturing company).
+6)online booking store(movie tickets,airlines,railway tickets,shopping cart,cab booking).
+7)vehicle management system(sales,services).
+8)health insurance.
+9)Hospital management.
+
+
+Entity relationship diagram(ER)

@@ -1,0 +1,192 @@
+***index.jsp***
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="doMath.html">
+First input: <input type=text name="a"/>
+Second input: <input type=text name="b"/>
+<input type=submit value=calc>
+
+
+</form>
+</body>
+</html>
+
+
+
+****spring-mvc.xml****
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+ xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/net.codejava.spring"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+<context:component-scan base-package="net.codejava.spring"></context:component-scan>
+
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/views/"/>
+<property name="suffix" value=".jsp"/>
+
+</bean>
+
+   <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+
+<property name="exceptionMappings">
+	<props>
+	
+		<prop key="java.lang.ArithmeticException">MathError</prop>
+		
+	</props>
+</property>
+<property name="defaultErrorView" value="Error"/>
+</bean>
+</beans>
+
+*****Error.jsp****
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset="ISO-8859-1">
+<title>Error</title>
+</head>
+<body>
+	<h3>
+		General Error: ${exception}
+	</h3>
+</body>
+</html>
+
+**MathError.jsp***
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>Error</title>
+</head>
+<body>
+<h2>
+		Mathematical Error: ${exception} <br/>
+	</h2>
+</body>
+</html>
+
+
+****MathResult.jsp***
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Details</title>
+</head>
+<body>
+<center>
+<b>Sum: ${sum}</b></br>
+<b>Subtract: ${subtract}</b></br>
+
+<b>Multiply: ${multiply}</b></br>
+
+<b>Divide: ${divide}</b></br>
+
+</center>
+</body>
+</html>
+
+
+****MathController.java***
+
+
+package net.codejava.spring;
+
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping("/doMath")
+public class MathController {
+	
+	@RequestMapping(method=RequestMethod.GET)
+	
+	public ModelAndView calculateSum(@RequestParam("a") int a,@RequestParam("b") int b) {
+		ModelAndView model=new ModelAndView("MathResult");
+		
+		model.addObject("sum",(a+b));
+		model.addObject("subtract",(a-b));
+
+		model.addObject("multiply",(a*b));
+		model.addObject("divide",(a/b));
+
+		return model;
+
+		
+	}
+	
+	
+
+}
+
+
+
+*****web.xml***
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SpringMVCException1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>SpringController</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/spring-mvc.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SpringController</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

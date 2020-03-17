@@ -1,0 +1,117 @@
+product.hbm.xml
+------------------
+
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+<class name="sanju.Product" table="PRODUCTS">
+
+<id name="productId" column="pid">
+<generator class="assigned"></generator>
+</id>
+
+<property name="proName" column="pname"></property>
+<property name="price"/>
+
+</class>
+
+
+</hibernate-mapping>
+
+
+</hibernate-configuration>
+
+
+hibernate.cfg.xml
+----------------------
+
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+
+<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+<property name="hibernate.connection.url">jdbc:mysql://localhost/practise</property>
+<property name="hibernate.connection.username">root</property>
+<property name="hibernate.connection.password">root</property>
+<property name="hibernate.connection.pool_size">10</property>
+<property name="show_sql">true</property>
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+<property name="hibernate.hbm2ddl.auto">update</property>
+
+<mapping resource="product.hbm.xml"/>
+</session-factory>
+
+
+</hibernate-configuration>
+
+
+Save.java
+-------------
+
+package sanju;
+
+import org.hibernate.*;
+import org.hibernate.cfg.*;
+
+public class Save {
+
+	public static void main(String[] args) {
+		Configuration cfg=new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory=cfg.buildSessionFactory();
+		Session session=factory.openSession();
+		Product p=new Product();
+		p.setProductId(101);
+		
+		p.setProName("iPhone");
+		p.setPrice(25000);
+		 Transaction tx=session.beginTransaction();
+		 session.save(p);
+		 System.out.println("Object saved successfully.....!!");
+		 tx.commit();
+		 session.close();
+		 factory.close();
+	}
+}
+
+
+Product.java
+---------------------------
+package sanju;
+
+public class Product {
+
+	private int productId;
+	private String proName;
+	private double price;
+	
+	
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public String getProName() {
+		return proName;
+	}
+	public void setProName(String proName) {
+		this.proName = proName;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+}

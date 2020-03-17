@@ -1,0 +1,234 @@
+***M.jsp**
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+
+<body>
+<jsp:forward page="contacts.html"></jsp:forward>
+</body>
+</html>
+
+
+***web.xml***
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Spring-Web</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!--  <servlet>
+  <servlet-name>spring</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>spring</servlet-name>
+  <url-pattern>*.html</url-pattern>
+  </servlet-mapping>-->
+  
+  <servlet>
+  <servlet-name>mvc</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>mvc</servlet-name>
+  <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+   
+ 
+</web-app>
+
+
+
+****mvc-servlet****
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+ xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/com.controller"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<context:component-scan base-package="com.controller"></context:component-scan>
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/WEB-INF/jsp/"/>
+<property name="suffix" value=".jsp"/>
+
+</bean>
+</beans>
+
+
+****ContactController.java***
+
+package com.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.servlet.ModelAndView;
+
+
+import com.controller.Contact;
+
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+@Controller
+@SessionAttributes
+
+public class ContactController {
+
+	@RequestMapping(value="/add",method=RequestMethod.POST)
+	public String addContact(@ModelAttribute("contact")
+	Contact contact,BindingResult results){
+		System.out.println("First Name:"+contact.getFirstname()+"Last Name:"+contact.getLastname()+"Email:"+contact.getEmail()+"telephone:"+contact.getTelephone());
+		 return "results";
+	}
+	@RequestMapping("/contacts")
+	public ModelAndView showContacts() {
+		
+		return new ModelAndView("contact","command",new Contact());
+		
+	}
+}
+
+
+
+****Contact.java***
+
+package com.controller;
+ 
+public class Contact {
+ private String firstname;
+ private String lastname;
+ private String email;
+ private String telephone;
+public String getFirstname() {
+	return firstname;
+}
+public void setFirstname(String firstname) {
+	this.firstname = firstname;
+}
+public String getLastname() {
+	return lastname;
+}
+public void setLastname(String lastname) {
+	this.lastname = lastname;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public String getTelephone() {
+	return telephone;
+}
+public void setTelephone(String telephone) {
+	this.telephone = telephone;
+}
+ 
+
+
+
+
+}
+
+
+****contact.jsp****
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Contact Manager</h2>
+<form:form method="post" action="add.html">
+<table>
+
+<tr>
+<td><form:label path="firstname">First Name</form:label></td>
+<td><form:input path="firstname"/></td>
+</tr>
+
+<tr>
+<td><form:label path="lastname">Last Name</form:label></td>
+<td><form:input path="lastname"/></td>
+</tr>
+
+<tr>
+<td><form:label path="email">Email</form:label></td>
+<td><form:input path="email"/></td>
+</tr>
+
+
+<tr>
+<td><form:label path="telephone">Telephone</form:label></td>
+<td><form:input path="telephone"/></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<input type="submit" value="Add contact"/>
+</td>
+</tr>
+
+</table>
+</form:form>
+</body>
+</html>
+
+
+****results.jsp**
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+    
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Submitted Student Information</h2>
+<table>
+<tr>
+<td>Name ${contact.firstname}</td>
+</tr>
+
+<tr>
+<td>lastName ${contact.lastname}</td>
+</tr>
+
+<tr>
+<td>ID ${contact.email}</td>
+</tr>
+
+<tr>
+<td>Phone ${contact.telephone}</td>
+</tr>
+</table>
+</body>
+</html>

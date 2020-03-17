@@ -1,0 +1,78 @@
+*Factory-method:
+simple code to inject the dependency by static factory method that returns the instance of another class.
+
+package com.javatpoint;  
+public interface Printable {  
+void print();  
+}  
+
+
+package com.javatpoint;  
+public class A implements Printable{  
+    @Override  
+    public void print() {  
+        System.out.println("hello a");  
+    }  
+  
+}  
+
+
+
+package com.javatpoint;  
+public class B implements Printable{  
+    @Override  
+    public void print() {  
+        System.out.println("hello b");  
+    }  
+}  
+
+
+****PrintableFactory.java***
+
+package com.javatpoint;  
+public class PrintableFactory {  
+public static Printable getPrintable(){  
+    //return new B();  
+          return new A();//return any one instance, either A or B  
+}  
+}  
+
+
+
+*****applicationContext.xml*****
+
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="p" class="com.javatpoint.PrintableFactory" factory-method="getPrintable"></bean>  
+  
+</beans>  
+
+
+
+
+****Test.java****
+
+This class gets the bean from the applicationContext.xml file and calls the print() method.
+
+package org.sssit;  
+import org.springframework.context.ApplicationContext;  
+import org.springframework.context.support.ClassPathXmlApplicationContext;  
+public class Test {  
+public static void main(String[] args) {  
+    ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");  
+    Printable p=(Printable)context.getBean("p");  
+    p.print();  
+}  
+}  
+
+
+
+
+<bean id="autowiring1" class="sekhar.Autowiring"></bean>
+<bean id="a" class="sekhar.Autowiring1" autowire="byName"></bean>

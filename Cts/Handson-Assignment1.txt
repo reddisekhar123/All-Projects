@@ -1,0 +1,606 @@
+16.	Find the element position in a reversed string array
+Given a method with an array of strings and one string variable as input. Write code to sort the given array in reverse alphabetical order and return the postion of the given string in the array.
+Include a class UserMainCode with a static method getElementPosition which accepts an
+array of strings and a string variable as input.
+The return type of the output is an integer which is the position of given string value from the array.
+Create a Main class which gets string array and a string variable as an input and call the static methodgetElementPosition present in the UserMainCode.
+Input and Output Format:
+Input is an string array. First element in the input represents the size the array Assume the position of first element is 1.
+Output is an integer which is the position of the string variable
+Sample Input 1:
+4
+red green blue ivory ivory
+Sample Output 1:
+2
+Sample Input 2:
+3
+grape mango apple apple
+Sample Output 2:
+3
+
+
+17.	generate the series
+
+Given a method taking an odd positive Integer number as input. Write code to evaluate the following series:
+1+3-5+7-9…+/-n.
+
+Include a class UserMainCode with a static method addSeries which accepts a positive integer .
+The return type of the output should be an integer .
+
+Create a class Main which would get the input as a positive integer and call the static method addSeriespresent in the UserMainCode.
+Input and Output Format:
+
+Input consists of a positive integer n. Output is a single integer .
+ 
+Refer sample output for formatting specifications.
+
+Sample Input 1:
+
+9
+
+Sample Output 1:
+
+-3
+
+Sample Input 2:
+
+11
+
+Sample Output 2:
+
+8
+
+18.	Calculate Electricity Bill
+
+Given a method calculateElectricityBill() with three inputs. Write code to calculate the current bill.
+Include a class UserMainCode with a static method calculateElectricityBill which accepts 3
+
+inputs .The return type of the output should be an integer .
+
+Create a class Main which would get the inputs and call the static method calculateElectricityBill present in the UserMainCode. Input and Output Format:
+Input consist of 3 integers.
+
+First input is previous reading, second input is current reading and last input is per unit charge.
+ 
+Reading Format - XXXXXAAAAA where XXXXX is consumer number and AAAAA is meter
+
+reading.
+
+Output is a single integer corresponding to the current bill. Refer sample output for formatting specifications.
+Sample Input 1: ABC2012345 ABC2012660
+4
+
+Sample Output 1:
+
+1260
+
+Sample Input 2: ABCDE11111 ABCDE11222
+3
+
+Sample Output 2:
+
+333
+
+19.	Sum of Digits in a String
+
+Write code to get the sum of all the digits present in the given string.
+
+Include a class UserMainCode with a static method sumOfDigits which accepts string input.
+
+Return the sum as output. If there is no digit in the given string return -1 as output.
+
+Create a class Main which would get the input and call the static method sumOfDigits present in the UserMainCode.
+Input and Output Format:
+
+Input consists of a string.
+
+Output is a single integer which is the sum of digits in a given string. Refer sample output for formatting specifications.
+ 
+Sample Input 1: good23bad4 Sample Output 1:
+9
+
+Sample Input 2:
+
+good
+
+Sample Output 2:
+
+-1
+
+20.	String Concatenation
+
+Write code to get two strings as input and If strings are of same length simply append them together and return the final string. If given strings are of different length, remove starting characters from the longer string so that both strings are of same length then append them together and return the final string.
+Include a class UserMainCode with a static method concatstring which accepts two string
+
+input.
+
+The return type of the output is a string which is the concatenated string. Create a class Main which would get the input and call the static
+ 
+method concatstring present in the UserMainCode.
+
+Input and Output Format:
+
+Input consists of two strings. Output is a string.
+Refer sample output for formatting specifications.
+
+Sample Input 1:
+
+Hello hi
+Sample Output 1:
+
+lohi
+
+Sample Input 2:
+
+Hello Delhi
+Sample Output 2:
+
+HelloDelhi
+
+
+21.	Color Code
+ 
+Write a program to read a string and validate whether the given string is a valid color code based on the following rules:
+-	Must start with "#" symbol
+
+-	Must contain six characters after #
+
+-	It may contain alphabets from A-F or digits from 0-9
+
+Include a class UserMainCode with a static method validateColorCode which accepts a string. The return type (integer) should return 1 if the color is as per the rules else return -1. Create a Class Main which would be used to accept a String and call the static method present in UserMainCode.
+Input and Output Format:
+
+Input consists of a string.
+
+Output consists of a string (Valid or Invalid). Refer sample output for formatting specifications. Sample Input 1:
+#FF9922
+
+Sample Output 1:
+
+Valid
+
+Sample Input 2:
+
+#FF9(22
+
+Sample Output 2:
+
+Invalid
+
+22.	Three Digits
+
+Write a program to read a string and check if the given string is in the format "CTS-XXX" where XXX is a three digit number.
+Include a class UserMainCode with a static method validatestrings which accepts a string.
+
+The return type (integer) should return 1 if the string format is correct else return -1. Create a Class Main which would be used to accept a String and call the static method present in UserMainCode.
+Input and Output Format:
+
+Input consists of a string.
+
+Output consists of a string (Valid or Invalid). Refer sample output for formatting specifications. Sample Input 1:
+CTS-215
+
+Sample Output 1:
+
+Valid
+
+Sample Input 2:
+
+CTS-2L5
+ 
+Sample Output 2:
+
+Invalid
+
+
+23.	Removing Keys from HashMap
+
+Given a method with a HashMap<Integer,string> as input. Write code to remove all the entries having keys multiple of 4 and return the size of the final hashmap.
+Include a class UserMainCode with a static method sizeOfResultandHashMap which accepts hashmap as input.
+The return type of the output is an integer which is the size of the resultant hashmap.
+
+Create a class Main which would get the input and call the static method sizeOfResultandHashMap present in the UserMainCode. Input and Output Format:
+First input corresponds to the size of the hashmap. Input consists of a hashmap<integer,string>.
+Output is an integer which is the size of the hashmap. Refer sample output for formatting specifications.
+Sample Input 1:
+
+3
+
+2
+
+hi 4
+hello 12
+ 
+hello world
+
+Sample Output 1:
+
+1
+
+Sample Input 2:
+
+3
+
+2
+
+hi 4
+sdfsdf 3
+asdf
+
+Sample Output 2:
+
+2
+
+24.	Largest Element
+
+Write a program to read an int array of odd length, compare the first, middle and the last
+ 
+elements in the array and return the largest. If there is only one element in the array return the same element.
+Include a class UserMainCode with a static method checkLargestAmongCorner
+which
+
+accepts an int arrayThe return type (integer) should return the largest element among the first, middle and the last elements.
+Create a Class Main which would be used to accept Input array and call the static method present in UserMainCode.
+Assume maximum length of array is 20.
+
+Input and Output Format:
+
+Input consists of n+1 integers. The first integer corresponds to n, the number of elements in the array. The next 'n' integers correspond to the elements in the array.
+Output consists of a single Integer.
+
+Refer sample output for formatting specifications.
+
+Sample Input 1:
+
+5
+
+2
+
+3
+
+8
+
+4
+
+5
+
+Sample Output 1:
+
+8
+
+
+25.	nCr
+
+Write a program to calculate the ways in which r elements can be selected from n population, using nCr formula nCr=n!/r!(n-r)! where first input being n and second input being r.
+Note1 : n! factorial can be achieved using given formula n!=nx(n-1)x(n-2)x..3x2x1.
+
+Note2 : 0! = 1.
+
+Example 5!=5x4x3x2x1=120
+
+Include a class UserMainCode with a static method calculateNcr which accepts two integers. The return type (integer) should return the value of nCr.
+Create a Class Main which would be used to accept Input elements and call the static method present in UserMainCode.
+
+
+Input and Output Format:
+
+Input consists of 2 integers. The first integer corresponds to n, the second integer corresponds to r.
+Output consists of a single Integer.
+
+Refer sample output for formatting specifications.
+
+Sample Input 1:
+
+4
+
+3
+ 
+Sample Output 1:
+
+4
+
+
+26.	Sum of Common Elements
+
+Write a program to find out sum of common elements in given two arrays. If no common elements are found print - “No common elements”.
+Include a class UserMainCode with a static method getSumOfIntersection which accepts
+
+two integer arrays and their sizes. The return type (integer) should return the sum of common elements.
+Create a Class Main which would be used to accept 2 Input arrays and call the static method present in UserMainCode.
+Input and Output Format:
+
+Input consists of 2+m+n integers. The first integer corresponds to m (Size of the 1st array), the second integer corresponds to n (Size of the 2nd array), followed by m+n integers corresponding to the array elements.
+Output consists of a single Integer corresponds to the sum of common elements or a string
+ 
+“No common elements”.
+
+Refer sample output for formatting specifications.
+
+Assume the common element appears only once in each array.
+
+Sample Input 1:
+
+4
+
+3
+
+2
+
+3
+
+5
+
+1
+
+1
+
+3
+
+9
+
+Sample Output 1:
+
+4
+
+Sample Input 2:
+
+4
+
+3
+
+2
+
+3
+
+5
+
+1
+
+12
+
+31
+
+9
+ 
+Sample Output 2:
+
+No common elements
+
+
+27.	Validating Input Password
+
+102.Write a code get a password as string input and validate using the rules specified below. Apply following validations:
+1.	Minimum length should be 8 characters
+
+2.	Must contain any one of these three special characters @ or _ or #
+
+3.	May contain numbers or alphabets.
+
+4.	Should not start with special character or number
+
+5.	Should not end with special character
+
+Include a class UserMainCode with a static method validatePassword which accepts password string as input and returns an integer. The method returns 1 if the password is
+ 
+valid. Else it returns -1.
+
+Create a class Main which would get the input and call the static method validatePassword present in the UserMainCode.
+Input and Output Format:
+
+Input consists of a string.
+
+Output is a string Valid or Invalid.
+
+Refer sample output for formatting specifications.
+
+Sample Input 1:
+
+ashok_23
+
+Sample Output 1:
+
+Valid
+
+Sample Input 2:
+
+1980_200
+
+Sample Output 2:
+
+Invalid
+
+28.iD Validation
+Write a program to get two string inputs and validate the ID as per the specified format.
+Include a class UserMainCode with a static method validateIDLocations which accepts
+two
+strings as input.
+The return type of the output is a string Valid Id or Invalid Id.
+Create a class Main which would get the input and call the static
+method validateIDLocations present in the UserMainCode.
+Input and Output Format:
+Input consists of two strings.
+First string is ID and second string is location. ID is in the format CTS-LLL-XXXX where
+LLL is
+the first three letters of given location and XXXX is a four digit number.
+Output is a string Valid id or Invalid id.
+Refer sample output for formatting specifications.
+Sample Input 1:
+CTS-hyd-1234
+hyderabad
+Sample Output 1:
+Valid id
+Sample Input 2:
+CTS-hyd-123
+hyderabad
+Sample Output 2:
+Invalid id
+
+29.Remove Elements
+Write a program to remove all the elements of the given length and return the size of the
+final array as output. If there is no element of the given length, return the size of the same
+array as output.
+Include a class UserMainCode with a static method removeElements which accepts a
+string
+array, the number of elements in the array and an integer. The return type (integer) should
+return the size of the final array as output.
+Create a Class Main which would be used to accept Input String array and a number and call
+the static method present in UserMainCode.
+Assume maximum length of array is 20.
+Input and Output Format:
+Input consists of a integers that corresponds to n, followed by n strings and finally m which
+corresponds to the length value.
+Output consists of a single Integer.
+Refer sample output for formatting specifications.
+Sample Input 1:
+5
+a
+bb
+b
+ccc
+ddd
+2
+Sample Output 1:
+4
+
+30.Find the difference between Dates in months
+Given a method with two date strings in yyyy-mm-dd format as input. Write code to find the
+difference between two dates in months.
+Include a class UserMainCode with a static method getMonthDifference which accepts
+two
+date strings as input.
+The return type of the output is an integer which returns the diffenece between two dates
+in months.
+Create a class Main which would get the input and call the static
+method getMonthDifference present in the UserMainCode.
+Input and Output Format:
+Input consists of two date strings.
+Format of date : yyyy-mm-dd.
+Output is an integer.
+Refer sample output for formatting specifications.
+Sample Input 1:
+2012-03-01
+2012-04-16
+Sample Output 1:
+1
+Sample Input 2:
+2011-03-01
+2012-04-16
+Sample Output 2:
+13
+
+31.Sum of cubes and squares of elements in an array
+Write a program to get an int array as input and identify even and odd numbers. If number
+is odd get cube of it, if number is even get square of it. Finally add all cubes and squares
+together and return it as output.
+Include a class UserMainCode with a static method addEvenOdd which accepts integer
+array as input.
+The return type of the output is an integer which is the sum of cubes and squares of
+elements in the array.
+Create a class Main which would get the input and call the static
+method addEvenOdd present in the UserMainCode.
+Input and Output Format:
+Input consists of integer array.
+Output is an integer sum.
+Refer sample output for formatting specifications.
+Sample Input 1:
+5
+2
+6
+3
+4
+5
+Sample Output 1:
+208
+
+32.IP Validator
+Write a program to read a string and validate the IP address. Print “Valid” if the IP address is
+valid, else print “Invalid”.
+Include a class UserMainCode with a static method ipValidator which accepts a string.
+The
+return type (integer) should return 1 if it is a valid IP address else return 2.
+Create a Class Main which would be used to accept Input String and call the static method
+present in UserMainCode.
+Input and Output Format:
+Input consists of a string that corresponds to an IP.
+Output consists of a string(“Valid” or “Invalid”).
+Refer sample output for formatting specifications.
+Note: An IP address has the format a.b.c.d where a,b,c,d are numbers between 0-255.
+Sample Input 1:
+132.145.184.210
+Sample Output 1:
+Valid
+Sample Input 2:
+132.145.184.290
+Sample Output 2:
+Invalid
+
+33.Difference between two dates in days
+Get two date strings as input and write code to find difference between two dates in days.
+Include a class UserMainCode with a static method getDateDifference which accepts two 
+date strings as input.
+The return type of the output is an integer which returns the diffenece between two dates
+in days.
+Create a class Main which would get the input and call the static
+method getDateDifference present in the UserMainCode.
+Input and Output Format:
+Input consists of two date strings.
+Format of date : yyyy-mm-dd.
+Output is an integer.
+Refer sample output for formatting specifications.
+Sample Input 1:
+2012-03-12
+2012-03-14
+Sample Output 1:
+2
+Sample Input 2:
+2012-04-25
+2012-04-28
+Sample Output 2:
+3 
+
+34.File Extension
+Write a program to read a file name as a string and find out the file extension and return it
+as output. For example, the file sun.gif has the extension gif.
+Include a class UserMainCode with a static method fileIdentifier which accepts a string. The
+return type (string) should return the extension of the input string (filename).
+Create a Class Main which would be used to accept Input String and call the static method
+present in UserMainCode.
+Input and Output Format:
+Input consists of a string that corresponds to a file name.
+Output consists of a string(extension of the input string (filename)).
+Refer sample output for formatting specifications.
+Sample Input 1:
+sun.gif
+Sample Output 1:
+Gif 
+
+35.Find common characters and unique characters in string
+Given a method with two strings as input. Write code to count the common and unique
+letters in the two strings.
+Note:
+- Space should not be counted as a letter.
+- Consider letters to be case sensitive. ie, "a" is not equal to "A".
+Include a class UserMainCode with a static method commonChars which accepts two
+strings as input.
+The return type of the output is the count of all common and unique characters in the two
+strings.
+Create a class Main which would get the inputs and call the static
+method commonChars present in the UserMainCode. 
+Input and Output Format:
+Input consists of two strings.
+Output is an integer.
+Refer sample output for formatting specifications.
+Sample Input 1:
+a black cow
+battle ship
+Sample Output 1:
+2
+[Explanation : b, l and a are the common letters between the 2 input strings. But 'a'
+appears
+more than once in the 1st string. So 'a' should not be considered while computing the count
+value.]
+Sample Input 2:
+australia
+sri lanka
+Sample Output 2:
+4 

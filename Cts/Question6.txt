@@ -1,0 +1,43 @@
+package Test;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.Map.Entry;
+
+class Validate{
+
+public ArrayList<String> validation(HashMap<String, String> hs) throws ParseException{
+Set<Entry<String,String>>entries=hs.entrySet();
+ArrayList<String> r=new ArrayList<String>();
+for(Entry<String, String> e:entries){
+String key=e.getKey();
+String value=e.getValue();
+SimpleDateFormat sdf1=new SimpleDateFormat("dd/MM/yyyy");
+Date d1=sdf1.parse(value);
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+String year1 = sdf.format(d1);
+int f=Integer.parseInt(year1);
+if(f<2002){
+r.add(key);
+}}
+return r;
+}}
+public class Question9 {
+
+public static void main(String[] args) throws ParseException {
+HashMap<String,String> hs=new HashMap<String,String>();
+hs.put("aruna", "12/3/2001");
+hs.put("lata", "12/5/1983");
+Validate k=new Validate();
+ArrayList<String> m=k.validation(hs);
+for(String l:m){
+System.out.println(l);
+}
+
+
+}
+
+}

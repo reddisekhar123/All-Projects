@@ -1,0 +1,308 @@
+1.	Check Sum of Odd Digits
+Write a program to read a number , calculate the sum of odd digits (values) present in the given number.
+Include a class UserMainCode with a static method checkSum which accepts a positive integer . The return type should be 1 if the sum is odd . In case the sum is even return -1 as output.
+Create a class Main which would get the input as a positive integer and call the static method checkSum present in the UserMainCode.
+Input and Output Format:
+Input consists of a positive integer n.
+Refer sample output for formatting specifications.
+Sample Input 1:
+56895
+Sample Output 1: Sum of odd digits is odd. Sample Input 2:
+84228
+Sample Output 2:
+Sum of odd digits is even.
+
+
+
+2.	Number Validation
+Write a program to read a string of 10 digit number , check whether the string contains a 10 digit number in the format XXX-XXX-XXXX where 'X' is a digit.
+Include a class UserMainCode with a static method validateNumber which accepts a string
+as input .
+The return type of the output should be 1 if the string meets the above specified format . In case the number does not meet the specified format then return -1 as output.
+Create a class Main which would get the input as a String of numbers and call the static methodvalidateNumber present in the UserMainCode.
+Input and Output Format:
+Input consists of a string.
+Output is a string specifying the given string is valid or not . Refer sample output for formatting specifications.
+Sample Input 1:
+123-456-7895
+Sample Output 1: Valid number format Sample Input 2:
+-123-12344322
+Sample Output 2:
+Invalid number format
+
+3.	Sum of Squares of Even Digits
+Write a program to read a number , calculate the sum of squares of even digits (values) present in the given number.
+Include a class UserMainCode with a static method sumOfSquaresOfEvenDigits
+which accepts a positive integer . The return type (integer) should be the sum of squares of the even digits.
+Create a class Main which would get the input as a positive integer and call the static method sumOfSquaresOfEvenDigits present in the UserMainCode.
+Input and Output Format:
+Input consists of a positive integer n. Output is a single integer .
+Refer sample output for formatting specifications.
+Sample Input 1:
+56895
+Sample Output 1:
+100
+
+
+
+4.	Fetching Middle Characters from String
+Write a program to read a string of even length and to fetch two middle most characters from the input string and return it as string output.
+Include a class UserMainCode with a static method getMiddleChars which accepts a string
+of even length as input . The return type is a string which should be the middle characters of the string.
+Create a class Main which would get the input as a string and call the static method getMiddleCharspresent in the UserMainCode.
+Input and Output Format:
+Input consists of a string of even length. Output is a string .
+Refer sample output for formatting specifications.
+Sample Input 1:
+this
+Sample Output 1:
+hi
+Sample Input 1:
+Hell
+Sample Output 1:
+el
+
+
+
+5.	Check Characters in a String
+Write a program to read a string and to test whether first and last character are same. The string is said to be be valid if the 1st and last character are the same. Else the string is said to be invalid.
+Include a class UserMainCode with a static method checkCharacters which accepts a string
+as input .
+The return type of this method is an int. Output should be 1 if the first character and last character are same . If they are different then return -1 as output.
+Create a class Main which would get the input as a string and call the static method checkCharacterspresent in the UserMainCode.
+Input and Output Format:
+Input consists of a string.
+Output is a string saying characters are same or not . Refer sample output for formatting specifications.
+Sample Input 1: the picture was great Sample Output 1: Valid
+Sample Input 1:
+this
+ 
+Sample Output 1:
+Invalid
+
+
+6.	Forming New Word from a String
+Write a program to read a string and a positive integer n as input and construct a string with first n and last n characters in the given string.
+Include a class UserMainCode with a static method formNewWord which accepts a string
+and positive integer .
+ 
+The return type of the output should be a string (value) of first n character and last n character.
+Create a class Main which would get the input as a string and integer n and call the static methodformNewWord present in the UserMainCode.
+Input and Output Format:
+Input consists of a string of even length. Output is a string .
+Note: The given string length must be >=2n.
+Refer sample output for formatting specifications.
+Sample Input 1:
+California 3
+Sample Output 1:
+Calnia
+Sample Input 2:
+this 1
+Sample Output 2:
+Ts
+
+7.	Reversing a Number
+Write a program to read a positive number as input and to get the reverse of the given number and return it as output.
+Include a class UserMainCode with a static method reverseNumber which accepts a positive
+integer .
+The return type is an integer value which is the reverse of the given number. Create a Main class which gets the input as a integer and call the static method reverseNumber present in the UserMainCode
+Input and Output Format:
+Input consists of a positive integer. Output is an integer .
+Refer sample output for formatting specifications.
+Sample Input 1:
+543
+Sample Output 1:
+345
+Sample Input 1:
+1111
+Sample Output 1:
+1111
+
+
+8.	Array List Sorting and Merging
+ 
+Write a code to read two int array lists of size 5 each as input and to merge the two arrayLists, sort the merged arraylist in ascending order and fetch the elements at 2nd, 6th and 8th index into a new arrayList and return the final ArrayList.
+Include a class UserMainCode with a static method sortMergedArrayList which accepts 2
+ArrayLists.
+The return type is an ArrayList with elements from 2,6 and 8th index position .Array index starts from position 0.
+Create a Main class which gets two array list of size 5 as input and call the static methodsortMergedArrayList present in the UserMainCode.
+Input and Output Format:
+Input consists of two array lists of size 5. Output is an array list .
+Note - The first element is at index 0.
+Refer sample output for formatting specifications.
+Sample Input 1:
+3
+1
+17
+11
+19
+5
+2
+7
+6
+20
+Sample Output 1:
+3
+11
+19
+Sample Input 2:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Sample Output 2:
+3
+7
+9
+
+
+9.	Validating Date Format
+Obtain a date string in the format dd/mm/yyyy. Write code to validate the given date against the given format.
+Include a class UserMainCode with a static method validateDate which accepts a string . The return type of the validateDate method is 1 if the given date format matches the specified format , If the validation fails return the output as -1.
+Create a Main class which gets date string as an input and call the static method validateDate present in the UserMainCode.
+Input and Output Format:
+Input is a string .
+Refer sample output for formatting specifications
+Sample Input 1:
+12/06/1987
+ 
+Sample Output 1:
+Valid date format
+Sample Input 2:
+03/1/1987
+Sample Output 2:
+Invalid date format
+
+10.	Validate Time
+Obtain a time string as input in the following format 'hh:mm am' or 'hh:mm pm'. Write code to validate it using the following rules:
+-	It should be a valid time in 12 hrs format
+-	It should have case insensitive AM or PM
+Include a class UserMainCode with a static method validateTime which accepts a string. If the given time is as per the given rules then return 1 else return -1.If the value returned is 1 then print as valid time else print as Invalid time.
+Create a Main class which gets time(string value) as an input and call the static method validateTimepresent in the UserMainCode.
+ 
+Input and Output Format:
+Input is a string . Output is a string . Sample Input 1:
+09:59 pm
+Sample Output 1:
+Valid time
+Sample Input 2:
+10:70 AM
+Sample Output 2:
+Invalid time
+
+
+
+11.	String Encryption
+Given an input as string and write code to encrypt the given string using following rules and return the encrypted string:
+1.	Replace the characters at odd positions by next character in alphabet.
+2.	Leave the characters at even positions unchanged. Note:
+-	If an odd position charater is 'z' replace it by 'a'.
+-	Assume the first character in the string is at position 1.
+Include a class UserMainCode with a static method encrypt which accepts a string. The return type of the output is the encrypted string.
+Create a Main class which gets string as an input and call the static method encrypt
+present
+in theUserMainCode. Input and Output Format: Input is a string .
+Output is a string. Sample Input 1: curiosity
+Sample Output 1:
+dusipsjtz
+Sample Input 2:
+zzzz
+Sample Output 2:
+Azaz
+
+
+12.	Password Validation
+Given a method with a password in string format as input. Write code to validate the password using following rules:
+-	Must contain at least one digit
+-	Must contain at least one of the following special characters @, #, $ # Length should be between 6 to 20 characters.
+Include a class UserMainCode with a static method validatePassword which accepts a password string as input.
+If the password is as per the given rules return 1 else return -1.If the return value is 1 then print valid password else print as invalid password.
+Create a Main class which gets string as an input and call the static method validatePassword present in the UserMainCode.
+Input and Output Format:
+Input is a string . Output is a string . Sample Input 1:
+%Dhoom%
+Sample Output 1:
+Invalid password
+Sample Input 2:
+#@6Don
+Sample Output 2:
+Valid password
+
+13.	Removing vowels from String
+Given a method with string input. Write code to remove vowels from even position in the string.
+Include a class UserMainCode with a static method removeEvenVowels which accepts a
+string as input.
+The return type of the output is string after removing all the vowels. Create a Main class which gets string as an input and call the static method removeEvenVowels present in the UserMainCode.
+Input and Output Format:
+Input is a string . Output is a string .
+Assume the first character is at position 1 in the given string.
+Sample Input 1:
+commitment
+Sample Output 1:
+cmmitmnt
+Sample Input 2:
+capacity
+Sample Output 2:
+Cpcty
+
+
+ 
+14.	Sum of Powers of elements in an array
+Given a method with an int array. Write code to find the power of each individual element accoding to its position index, add them up and return as output.
+Include a class UserMainCode with a static method getSumOfPower which accepts an integer array as input.
+The return type of the output is an integer which is the sum powers of each element in the array.
+Create a Main class which gets integer array as an input and call the static method getSumOfPowerpresent in the UserMainCode.
+Input and Output Format:
+Input is an integer array.First element corresponds to the number(n) of elements in an array.The next inputs corresponds to each element in an array.
+Output is an integer .
+Sample Input 1:
+4
+3
+6
+2
+1
+Sample Output 1:
+12
+Sample Input 2:
+4
+5
+3
+7
+2
+Sample Output 2:
+61
+
+
+15.	Difference between largest and smallest elements in an array
+Given a method taking an int array having size more than or equal to 1 as input. Write code to return the difference between the largest and smallest elements in the array. If there is only one element in the array return the same element as output.
+Include a class UserMainCode with a static method getBigDiff which accepts a integer array
+as input.
+The return type of the output is an integer which is the difference between the largest and smallest elements in the array.
+Create a Main class which gets integer array as an input and call the static method getBigDiff present in the UserMainCode.
+Input and Output Format:
+Input is an integer array.First element in the input represents the number of elements in an array.
+Size of the array must be >=1
+Output is an integer which is the difference between the largest and smallest element in an array.
+Sample Input 1:
+4
+3
+6
+2
+1
+Sample Output 1:
+5
+Sample Input 2:
+4
+5
+3
+7
+2
+Sample Output 2:
+5
+
